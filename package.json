@@ -1,0 +1,8 @@
+{
+  "name": "sikaku-calendar",
+  "private": true,
+  "dependencies": {
+    "@fullcalendar/core": "^5.4.0",
+    "fullcalendar": "^5.4.0"
+  }
+}
