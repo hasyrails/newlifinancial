@@ -67,3 +67,5 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 
 gem 'sorcery'
+
+gem 'carrierwave'
