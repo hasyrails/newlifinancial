@@ -1,9 +1,11 @@
 <header>
 
   <% if current_user %>
+    <% if current_user.avatar %>
     <div class="header-user-icon">
-      <%= image_tag '/sample.png', size: '50x50' %>
+      <%= image_tag current_user.avatar.url, size: '50x50' %>
     </div>
+    <% end %>
   <% end %>
 
   <div class="app-name">
