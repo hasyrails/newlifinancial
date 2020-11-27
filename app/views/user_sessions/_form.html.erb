@@ -1,17 +1,25 @@
-<%= form_tag user_sessions_path, :method => :post do %>
+<%= form_with url: user_sessions_path, method: :post do |form| %>
 
-  <div class="field">
-    <%= label_tag :email %><br />
-    <%= text_field_tag :email %>
+  <div class="form">
+    <div class="form-label">
+      <%=  t User.human_attribute_name(:email)%>
+    </div>
+    <div>
+      <%= form.text_field :email %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= label_tag :password %><br />
-    <%= password_field_tag :password %>
-  </div>
-  
-  <div class="actions">
-    <%= submit_tag "Login" %>
+  <div class="form">
+    <div class="form-label">
+      <%=  t User.human_attribute_name(:password)%>
+    </div>
+    <div>
+      <%= password_field_tag :password %>
+    </div>
   </div>
 
+
+  <div class="actions" id="login-btn">
+    <%= form.submit('ログインする', class: 'modified-link btn btn-warning btn-lg', style: 'border: 1px solid grey;') %>
+  </div>
 <% end %>
