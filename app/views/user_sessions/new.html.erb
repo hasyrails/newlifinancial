@@ -1,7 +1,10 @@
 <div class="container">
-  <h1>Login</h1>
+  <div class="user-login-page-title">ログイン</div>
+
+  <%= render 'shared/flash_message', class: "alert alert-danger" %>
 
   <%= render 'form' %>
 
-  <%= link_to 'Back', user_sessions_path %>
+  <%= link_to 'トップへ戻る', root_path, class: 'btn btn-primary', id:'new_user_session_path-back-btn' %>
+  <%= link_to 'ユーザー登録ページへ', new_user_path, class: 'btn btn-primary', id:'new_user_session_path-register-btn' %>
 </div>

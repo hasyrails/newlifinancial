@@ -1,50 +1,64 @@
-<%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="user-register-form">
+  <%= form_with(model: user, local: true) do |form| %>
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+    <%= render 'shared/error_message', model: form.object %>
+
+    <div class="form">
+      <div class="form-label">
+        <%= form.label :name %>
+      </div>
+      <div>
+        <%= form.text_field :name %>
+      </div>
+    </div>
+
+    <div class="form">
+      <div class="form-label">
+        <%= form.label :email %>
+      </div>
+      <div>
+        <%= form.text_field :email %>
+      </div>
+    </div>
+
+    <div class="form">
+      <div class="form-label">
+        <%= form.label :avatar %>
+      </div>
+      <div>
+        <%= form.file_field :avatar, id: :user_img %>
+      </div>
+    </div>
+
+    <div class="user-avatar-preview">
+      <% if @user.avatar.present? %>
+        <%= image_tag @user.avatar.url, id: :img_prev, size: '100x100' %>
+      <% else %>
+        <%= image_tag "/sample-avatar.png", id: :img_prev, size: '100x100' %>
       <% end %>
-      </ul>
+    </div>
+
+    <div class="form">
+      <div class="form-label">
+        <%= form.label :password %>
+      </div>
+      <div>
+        <%= form.password_field :password %>
+      </div>
+    </div>
+
+    <div class="form">
+      <div class="form-label">
+        <%= form.label :password_confirmation %>
+      </div>
+      <div>
+        <%= form.password_field :password_confirmation %>
+      </div>
+    </div>
+
+    <div class="form-btn">
+      <%= form.submit('登録する', class: 'btn btn-warning btn-lg', style: 'border: 1px solid grey;') %>
     </div>
   <% end %>
+</div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :avatar %>
-    <%= form.file_field :avatar, id: :user_img %>
-  </div>
-
-  <div>
-    <% if @user.avatar.present? %>
-      <%= image_tag @user.avatar, id: :img_prev, size: '75x75' %>
-    <% else %>
-      <%= image_tag "/sample-avatar.png", id: :img_prev, size: '75x75' %>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.text_field :password_confirmation %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

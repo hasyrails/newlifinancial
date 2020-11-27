@@ -98,3 +98,7 @@ $("#user_img").change(function(){
     readURL(this);
 });
 });
+
+$(function(){
+  setTimeout("$('.flash-message').fadeOut('slow')", 2000);
+});

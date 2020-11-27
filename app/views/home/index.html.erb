@@ -1,4 +1,5 @@
 <div class="container">
+  <%= render 'shared/flash_message', class: "alert alert-danger"  %>
   <div class="new-life-images">
     <div class="enroll-images">
       <div>
@@ -95,9 +96,9 @@
       </div>
     </div>
     <div class="lets-start-button">
-      <div class="btn btn-warning btn-lg">ユーザー登録</div>
-      <div class="btn btn-warning btn-lg">ログイン</div>
-      <div class="btn btn-warning btn-lg">ゲストログイン</div>
+      <%= link_to 'ユーザー登録', new_user_path, class: 'btn btn-warning btn-lg', style:'border: 1px solid grey;' %>
+      <%= link_to 'ログイン', login_path, class: 'btn btn-warning btn-lg', style:'border: 1px solid grey;' %>
+      <div class="btn btn-warning btn-lg" style='border: 1px solid grey;'>ゲストログイン</div>
     </div>
   </div>
 </div>

@@ -2,23 +2,24 @@
 
   <% if current_user %>
     <% if current_user.avatar %>
-    <div class="header-user-icon">
-      <%= image_tag current_user.avatar.url, size: '50x50' %>
-    </div>
+    
     <% end %>
   <% end %>
 
   <div class="app-name">
-    NewLifinancial
+    <% if current_user %>
+      <%= link_to 'NewLifinantial', mypage_path, class: 'modified-link' %>
+    <% else %>
+      <%= link_to 'NewLifinantial', root_path, class: 'modified-link' %>
+    <% end %>
   </div>
 
   <div class="header-links">
-    <div class="user-register-link">ユーザー登録</div>
+    <%= link_to 'ユーザー登録', new_user_path, class: 'user-register-link modified-link'%>
     <% if current_user %>
-      <div class="user-login-link">ログアウト</div>
+      <%= link_to 'ログアウト', logout_path, method: :post, class: 'user-login-link modified-link'%>
     <% else %>
-      <div class="user-login-link">ログイン</div>
-      <div class="user-guestlogin-link">ゲストログイン</div>
+      <%= link_to 'ログイン', login_path, class: 'user-login-link modified-link'%>
     <% end %>
   </div>
 
