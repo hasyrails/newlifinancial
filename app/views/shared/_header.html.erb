@@ -1,10 +1,22 @@
 <header>
 
-  <% if current_user %>
-    <% if current_user.avatar %>
-    
-    <% end %>
-  <% end %>
+  <div class="header-user-info">
+    <div class="header-user-icon">
+      <% if current_user %>
+        <% if current_user.avatar.present? %>
+            <%= image_tag(current_user.avatar.url, size: '50x50', style: 'border-radius: 25px 25px 25px 25px;')%>
+        <% else %>
+            <%= image_tag('/sample-avatar.png', size: '50x50', style: 'border-radius: 25px 25px 25px 25px;')%>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="header-user-name">
+      <% if current_user  %>
+        <%= current_user.name %>さん
+      <% end %>
+    </div>
+  </div>
 
   <div class="app-name">
     <% if current_user %>

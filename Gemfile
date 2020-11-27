@@ -69,4 +69,8 @@ gem 'momentjs-rails'
 gem 'sorcery'
 
 gem 'carrierwave'
+
 gem 'rails-i18n'
+
+gem 'rakuten_web_service'
+gem 'dotenv-rails'
