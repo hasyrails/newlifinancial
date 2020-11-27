@@ -24,22 +24,33 @@ header{
   font-size: 50px;
   font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
   background-color: #FFC7AF;
+  display: flex;
+}
+
+
+.header-user-info{
+  display: flex;
 }
 
 .header-user-icon{
-  position: fixed;
-  top: 0px;
-  left: 3%;
+  margin-left: 10%;
+}
+.header-user-name{
+  width: 100px;
+  margin-left: 5%;
+  margin-top: 20%;
+  font-size:16px;
 }
 
 .app-name{
-  text-align: center;
+  margin-left: 30%;
+  margin-right: 10%;
 }
 
 .header-links{
   position: fixed;
   top: 3%;
-  left: 68%;
+  left: 75%;
   display: flex;
   font-size: 16px;
 }
